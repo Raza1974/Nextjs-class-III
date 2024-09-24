@@ -69,6 +69,7 @@
 .header-buttons a:hover {
   color: var(--hover-color);
   text-decoration: underline;
+  font-weight: bold;
 }
 h1 {
   font-size: 3rem; /* Increase the font size */
@@ -102,7 +103,7 @@ img {
   margin-bottom: 1px; /* Add a small margin below the image */
   height: auto;     /* Maintain aspect ratio */
   display: block;
-  margin: 0  ;   /* Center the image horizontally */
+  margin: 0   ;   /* Center the image horizontally */
   margin-bottom: 1px; /* Add a small margin below the image */
 }
 
@@ -120,7 +121,7 @@ img {
 }
 
 .header img {
-  max-width: 5vw;
+  max-width: 4vw;
   height: auto;
 }
 
@@ -157,7 +158,7 @@ img {
 @media (max-width: 480px) {
   .header {
     height: 60px;
-    padding: 5px;
+    padding: 4px;
   }
   .header img {
     max-width: 8vw;
@@ -167,6 +168,7 @@ img {
     gap: 10px;
   }
   .header-buttons a {
-    font-size: 12px;
+    font-size: 10px;
+    margin:auto
   }
 }
