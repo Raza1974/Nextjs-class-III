@@ -3,25 +3,170 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --header-bg-color: #f5a1b9;
+  --text-color: rgb(252, 247, 247);
+  --hover-color: #771b51;
+  --button-gap: 30px;
+}
+.header {
+  position: relative;
+  padding-bottom: 40px; /* Leave space for the footer */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 12px; /* Smaller font size */
+  color: #333; /* Text color */
+  padding: 5px;
+  margin-left: 20px; /* Optional: Adjust for better spacing */
+}
+
+/* If you want the footer fixed at the bottom of the page */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  color: rgb(127, 197, 237);
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--button-gap);
+  margin-left: auto;
+}
+
+.header-buttons a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.header-buttons a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+h1 {
+  font-size: 3rem; /* Increase the font size */
+  text-align: center; /* Center the text horizontally */
+  margin-top: 40px; /* Add some space above */
+  color: #333; /* Optional: Change the color */
+}
+
+/* Optional: For responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Slightly reduce font size on tablets */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem; /* Further reduce font size on mobile */
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Set a global style for images within the Home component */
+img {
+  max-width: 70px; /* Adjust the width of the image */
+  object-fit: cover; /* Scale the image to maintain aspect ratio */
+  object-position: center; /* Center the image horizontally and vertically */
+  width: auto;     /* Maintain aspect ratio */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0  auto; /* Center the image horizontally */
+  margin-bottom: 1px; /* Add a small margin below the image */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0  ;   /* Center the image horizontally */
+  margin-bottom: 1px; /* Add a small margin below the image */
+}
+
+/* Media query for smaller screens (adjust the image size accordingly) */
+@media (max-width: 768px) {
+  img {
+    max-width: 70px; /* Reduce image size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  img {
+    max-width: 120px; /* Further reduce size for mobile screens */
+  }
+}
+
+.header img {
+  max-width: 5vw;
+  height: auto;
+}
+
+/* Media query for laptop screens */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px;
+  }
+  .header img {
+    max-width: 8%;
+    height: 70px;
+  }
+  .header-buttons {
+    gap: 20px;
+  }
+}
+
+/* Media query for tablet screens */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    padding: 10px;
+  }
+  .header img {
+    max-width: 10%;
+    height: 60px;
+  }
+  .header-buttons {
+    gap: 15px;
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+    padding: 5px;
+  }
+  .header img {
+    max-width: 8vw;
+    height: auto;
+  }
+  .header-buttons {
+    gap: 10px;
+  }
+  .header-buttons a {
+    font-size: 12px;
   }
 }
